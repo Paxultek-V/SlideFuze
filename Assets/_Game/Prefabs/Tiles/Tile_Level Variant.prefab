@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4348174634420401872, guid: f90fb7a23ea3b4bcab4fbaa1a8db12dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6761cf5432c54bb598d3a377e62fb82, type: 2}
     - target: {fileID: 7673007107960616991, guid: f90fb7a23ea3b4bcab4fbaa1a8db12dc, type: 3}
       propertyPath: m_Name
       value: Tile_Level Variant
@@ -93,3 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3a326b44e4143b4981f57e11190bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_basePower: 0

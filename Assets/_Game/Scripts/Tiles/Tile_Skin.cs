@@ -16,13 +16,13 @@ public class Tile_Skin : MonoBehaviour, I_Initializable
 
     public void Initialize()
     {
+        m_tile = GetComponent<Tile_Base>();
+        m_tilePower = GetComponent<Tile_Power>();
         UpdateSkin();
     }
 
     public void UpdateSkin()
     {
-        m_tile = GetComponent<Tile_Base>();
-        m_tilePower = GetComponent<Tile_Power>();
 
         if (m_tile != null)
         {

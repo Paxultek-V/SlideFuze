@@ -33,17 +33,15 @@ public class Tile_SkinData_SO : ScriptableObject
 
         for (int i = 0; i < m_skinSetList.Count; i++)
         {
-            if (tileType == TileType.Powered)
-            {
-                if (tilePower == m_skinSetList[i].tilePower)
-                {
-                    return m_skinSetList[i];
-                }
-            }
-            else if (m_skinSetList[i].tileType == tileType)
-            {
+            if(m_skinSetList[i].tileType != tileType)
+                continue;
+            
+            if (tileType != TileType.Powered)
                 return m_skinSetList[i];
-            }
+            
+            if (tilePower == m_skinSetList[i].tilePower)
+                return m_skinSetList[i];
+
         }
 
         return m_skinSetList[0];

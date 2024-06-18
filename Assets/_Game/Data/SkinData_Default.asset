@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: SkinData_Default
   m_EditorClassIdentifier: 
   m_skinSetList:
+  - tileType: 1
+    tilePower: 0
+    text: 
+    material: {fileID: 2100000, guid: 3b62c615fd65b42718c34bdc83bd5fb1, type: 2}
+  - tileType: 2
+    tilePower: 0
+    text: 
+    material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
   - tileType: 0
     tilePower: 0
     text: 1
@@ -33,11 +41,7 @@ MonoBehaviour:
     tilePower: 4
     text: 5
     material: {fileID: 2100000, guid: d5ee72093d92740d8a9e5d4df5f4e492, type: 2}
-  - tileType: 1
-    tilePower: 0
-    text: 
-    material: {fileID: 2100000, guid: 3b62c615fd65b42718c34bdc83bd5fb1, type: 2}
-  - tileType: 2
-    tilePower: 0
-    text: 
-    material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
+  - tileType: 0
+    tilePower: 5
+    text: 6
+    material: {fileID: 2100000, guid: ef44b44e92d0f402e9966f3cf6ba5f41, type: 2}

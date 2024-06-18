@@ -4,8 +4,8 @@ public class LevelBase : MonoBehaviour, I_Initializable
 {
     
 
-    public void Initialize()
+    public virtual void Initialize()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

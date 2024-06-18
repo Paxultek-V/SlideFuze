@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tile_Controlled : Tile_Base
 {
     [SerializeField] private LayerMask m_tileLayer = 0;
+    
+    [SerializeField] private LayerMask m_tileControlledLayer = 0;
 
     [SerializeField] private Transform m_visualFeedbackTransform = null;
 
@@ -22,11 +24,14 @@ public class Tile_Controlled : Tile_Base
     private Tile_Base m_otherTile;
     private Tile_Power m_tilePower;
     private Tile_Power m_otherTilePowerBuffer;
+    //private Tile_Controlled m_otherTileControlledBuffer;
     private bool m_canMerge;
+    private bool m_canControl;
 
     private void Awake()
     {
         m_tilePower = GetComponent<Tile_Power>();
+        m_canControl = true;
     }
 
     private void OnEnable()
@@ -42,7 +47,19 @@ public class Tile_Controlled : Tile_Base
 
     private void OnSwipeDirection(Vector3 direction, SwipeDirection swipeDirection)
     {
+        if(m_canControl == false)
+            return;
+
+        m_canControl = false;
+        
         bool canMove = DetermineDestination(direction);
+
+        if (Vector3.Distance(transform.position, m_desiredPosition) < 0.5f)
+        {
+            m_canMerge = false;
+            m_canControl = true;
+            return;
+        }
 
         if (canMove)
         {
@@ -68,27 +85,33 @@ public class Tile_Controlled : Tile_Base
             .OnComplete(() => m_visualFeedbackTransform.DOScale(Vector3.one, m_squishDuration / 2f));
 
         yield return new WaitForSeconds(m_squishDuration);
+        
+        m_canMerge = false;
+        m_canControl = true;
     }
 
     private void ReachDestination()
     {
         if (m_canMerge)
         {
-            Debug.Log("increase power");
             m_tilePower.IncreasePower();
             Destroy(m_otherTilePowerBuffer.gameObject);
         }
-
-        m_canMerge = false;
     }
 
     private bool DetermineDestination(Vector3 direction)
     {
-        RaycastHit hit;
+        RaycastHit hitTile;
+        RaycastHit hitTileControlled;
 
-        if (Physics.Raycast(transform.position + m_raycastOffset, direction, out hit, 200f, m_tileLayer))
+        if (Physics.Raycast(transform.position + m_raycastOffset, direction, out hitTileControlled, 200f, m_tileControlledLayer))
         {
-            m_otherTile = hit.collider.GetComponent<Tile_Base>();
+            //m_otherTileControlledBuffer = hitTileControlled.collider.GetComponent<Tile_Controlled>();
+        }
+        
+        if (Physics.Raycast(transform.position + m_raycastOffset, direction, out hitTile, 200f, m_tileLayer))
+        {
+            m_otherTile = hitTile.collider.GetComponent<Tile_Base>();
 
             if (m_otherTile == null)
             {
@@ -98,13 +121,17 @@ public class Tile_Controlled : Tile_Base
 
             m_otherTilePowerBuffer = m_otherTile.gameObject.GetComponent<Tile_Power>();
 
+            
             if (m_otherTilePowerBuffer != null)
             {
                 if (m_tilePower.Power == m_otherTilePowerBuffer.Power)
                 {
                     m_canMerge = true;
-                    Debug.Log("can merge");
                     m_desiredPosition = m_otherTile.Position;
+                }
+                else
+                {
+                    m_desiredPosition = m_otherTile.Position - direction;                    
                 }
             }
             else

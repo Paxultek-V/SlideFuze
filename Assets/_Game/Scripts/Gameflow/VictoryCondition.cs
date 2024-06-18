@@ -7,20 +7,18 @@ public class VictoryCondition : GameflowBehavior
 
     [SerializeField] private float m_delayBeforeTriggerVictory = 1f;
 
-    private float m_targetScore;
-    private float m_currentScore;
     private bool m_canTrackVictory;
 
     protected override void OnEnable()
     {
         base.OnEnable();
-        Manager_Score.OnSendCurrentScore += OnSendCurrentScore;
+        Level.OnLevelComplete += OnLevelComplete;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        Manager_Score.OnSendCurrentScore -= OnSendCurrentScore;
+        Level.OnLevelComplete -= OnLevelComplete;
     }
 
 
@@ -42,23 +40,13 @@ public class VictoryCondition : GameflowBehavior
         m_canTrackVictory = false;
     }
 
-    private void OnSendTargetScoreToReach(float targetScore)
-    {
-        m_targetScore = targetScore;
-    }
-
-    private void OnSendCurrentScore(float currentScore)
+    private void OnLevelComplete()
     {
         if (m_canTrackVictory == false)
             return;
 
-        m_currentScore = currentScore;
-
-        if (m_currentScore >= m_targetScore)
-        {
-            m_canTrackVictory = false;
-            Invoke(nameof(TriggetVictory), m_delayBeforeTriggerVictory);
-        }
+        m_canTrackVictory = false;
+        Invoke(nameof(TriggetVictory), m_delayBeforeTriggerVictory);
     }
 
     private void TriggetVictory()
