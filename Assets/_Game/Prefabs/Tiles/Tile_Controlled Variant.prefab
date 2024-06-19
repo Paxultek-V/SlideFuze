@@ -221,8 +221,8 @@ MonoBehaviour:
   m_raycastOffset: {x: 0, y: 0.2, z: 0}
   m_squishedVerticalScale: {x: 1.3, y: 1.1, z: 0.5}
   m_squishedHorizontalScale: {x: 0.5, y: 1.1, z: 1.3}
-  m_movementSpeed: 10
-  m_squishDuration: 0.2
+  m_movementSpeed: 50
+  m_squishDuration: 0.1
 --- !u!114 &7476618569022754855
 MonoBehaviour:
   m_ObjectHideFlags: 0

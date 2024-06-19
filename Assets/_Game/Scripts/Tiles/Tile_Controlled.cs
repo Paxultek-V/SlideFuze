@@ -8,7 +8,7 @@ public class Tile_Controlled : Tile_Base
     public static Action OnPlayerReachDestination;
 
     [SerializeField] private LayerMask m_tileLayer = 0;
-    
+
     [SerializeField] private LayerMask m_tileControlledLayer = 0;
 
     [SerializeField] private Transform m_visualFeedbackTransform = null;
@@ -24,12 +24,17 @@ public class Tile_Controlled : Tile_Base
     [SerializeField] private float m_squishDuration = 0.2f;
 
     private Vector3 m_desiredPosition;
+    private Vector3 m_registeredDirection;
+    private SwipeDirection m_registeredSwipeDirection;
     private Tile_Base m_otherTile;
     private Tile_Power m_tilePower;
+
     private Tile_Power m_otherTilePowerBuffer;
+
     //private Tile_Controlled m_otherTileControlledBuffer;
     private bool m_canMerge;
     private bool m_canControl;
+    private bool m_isSwipeRegistered;
 
     private void Awake()
     {
@@ -50,11 +55,19 @@ public class Tile_Controlled : Tile_Base
 
     private void OnSwipeDirection(Vector3 direction, SwipeDirection swipeDirection)
     {
-        if(m_canControl == false)
+        if (m_canControl == false)
+        {
+            RegisterSwipe(direction, swipeDirection);
             return;
+        }
 
+        TryMove(direction, swipeDirection);
+    }
+
+    private void TryMove(Vector3 direction, SwipeDirection swipeDirection)
+    {
         m_canControl = false;
-        
+
         bool canMove = DetermineDestination(direction);
 
         if (Vector3.Distance(transform.position, m_desiredPosition) < 0.5f)
@@ -64,6 +77,11 @@ public class Tile_Controlled : Tile_Base
             return;
         }
 
+        Move(swipeDirection, canMove);
+    }
+
+    private void Move(SwipeDirection swipeDirection, bool canMove)
+    {
         if (canMove)
         {
             float movementDuration = Vector3.Distance(m_desiredPosition, transform.position) / m_movementSpeed;
@@ -88,9 +106,16 @@ public class Tile_Controlled : Tile_Base
             .OnComplete(() => m_visualFeedbackTransform.DOScale(Vector3.one, m_squishDuration / 2f));
 
         yield return new WaitForSeconds(m_squishDuration);
-        
+
         m_canMerge = false;
         m_canControl = true;
+
+        if (m_isSwipeRegistered)
+        {
+            m_isSwipeRegistered = false;
+
+            TryMove(m_registeredDirection, m_registeredSwipeDirection);
+        }
     }
 
     private void ReachDestination()
@@ -100,8 +125,15 @@ public class Tile_Controlled : Tile_Base
             m_tilePower.IncreasePower();
             Destroy(m_otherTilePowerBuffer.gameObject);
         }
-        
+
         OnPlayerReachDestination?.Invoke();
+    }
+
+    private void RegisterSwipe(Vector3 direction, SwipeDirection swipeDirection)
+    {
+        m_isSwipeRegistered = true;
+        m_registeredDirection = direction;
+        m_registeredSwipeDirection = swipeDirection;
     }
 
     private bool DetermineDestination(Vector3 direction)
@@ -109,11 +141,12 @@ public class Tile_Controlled : Tile_Base
         RaycastHit hitTile;
         RaycastHit hitTileControlled;
 
-        if (Physics.Raycast(transform.position + m_raycastOffset, direction, out hitTileControlled, 200f, m_tileControlledLayer))
+        if (Physics.Raycast(transform.position + m_raycastOffset, direction, out hitTileControlled, 200f,
+                m_tileControlledLayer))
         {
             //m_otherTileControlledBuffer = hitTileControlled.collider.GetComponent<Tile_Controlled>();
         }
-        
+
         if (Physics.Raycast(transform.position + m_raycastOffset, direction, out hitTile, 200f, m_tileLayer))
         {
             m_otherTile = hitTile.collider.GetComponent<Tile_Base>();
@@ -126,7 +159,7 @@ public class Tile_Controlled : Tile_Base
 
             m_otherTilePowerBuffer = m_otherTile.gameObject.GetComponent<Tile_Power>();
 
-            
+
             if (m_otherTilePowerBuffer != null)
             {
                 if (m_tilePower.Power == m_otherTilePowerBuffer.Power)
@@ -136,7 +169,7 @@ public class Tile_Controlled : Tile_Base
                 }
                 else
                 {
-                    m_desiredPosition = m_otherTile.Position - direction;                    
+                    m_desiredPosition = m_otherTile.Position - direction;
                 }
             }
             else
