@@ -45,3 +45,7 @@ MonoBehaviour:
     tilePower: 5
     text: 6
     material: {fileID: 2100000, guid: ef44b44e92d0f402e9966f3cf6ba5f41, type: 2}
+  - tileType: 0
+    tilePower: 6
+    text: 7
+    material: {fileID: 2100000, guid: 78b48e69f50ac471daacddf01b147cf2, type: 2}
