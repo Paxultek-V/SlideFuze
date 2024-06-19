@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
 public class Tile_Controlled : Tile_Base
 {
+    public static Action OnPlayerReachDestination;
+
     [SerializeField] private LayerMask m_tileLayer = 0;
     
     [SerializeField] private LayerMask m_tileControlledLayer = 0;
@@ -97,6 +100,8 @@ public class Tile_Controlled : Tile_Base
             m_tilePower.IncreasePower();
             Destroy(m_otherTilePowerBuffer.gameObject);
         }
+        
+        OnPlayerReachDestination?.Invoke();
     }
 
     private bool DetermineDestination(Vector3 direction)

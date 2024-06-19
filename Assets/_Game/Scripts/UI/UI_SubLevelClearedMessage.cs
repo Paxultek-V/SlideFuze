@@ -42,13 +42,5 @@ public class UI_SubLevelClearedMessage : MonoBehaviour
         m_text.DOFade(1f, 0.15f)
             .OnComplete(() => m_text.DOFade(0f, 0.5f).SetDelay(0.5f));
         
-        // m_sequence = DOTween.Sequence();
-        // m_sequence.Append(DOTween.To(() => m_text.fontSize, x => m_text.fontSize = x, 100f, 0.5f).SetEase(Ease.Linear));
-        // m_sequence.Append(m_text.DOFade(1f, 0.15f));
-        // m_sequence.AppendInterval(0.5f);
-        // m_sequence.Append(m_text.DOFade(0f, 0.35f));
-        // m_sequence.Append(DOTween.To(() => m_text.fontSize, x => m_text.fontSize = x, 0f, 0.5f).SetEase(Ease.Linear));
-
-        //m_sequence.Play();
     }
 }

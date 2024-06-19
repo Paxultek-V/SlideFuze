@@ -6,14 +6,14 @@ public class Manager_HapticFeedback : MonoBehaviour
     private void OnEnable()
     {
         Option.OnSendOptionState += OnSendOptionState;
-        
+        Tile_Controlled.OnPlayerReachDestination += OnPlayerReachDestination;
         Manager_GameState.OnSendCurrentGameState += OnBroadcastGameState;
     }
 
     private void OnDisable()
     {
         Option.OnSendOptionState -= OnSendOptionState;
-        
+        Tile_Controlled.OnPlayerReachDestination -= OnPlayerReachDestination;
         Manager_GameState.OnSendCurrentGameState -= OnBroadcastGameState;
     }
 
@@ -44,6 +44,11 @@ public class Manager_HapticFeedback : MonoBehaviour
         }
     }
 
+    private void OnPlayerReachDestination()
+    {
+        PlayHeavyHaptic();
+    }
+    
     private void PlayLightHaptic()
     {
         Taptic.Light();

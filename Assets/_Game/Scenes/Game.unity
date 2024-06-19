@@ -352,8 +352,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb37917483ee24fea8fab306393441e5, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6ad56d83fdf3647ffa6499a570a1e0f5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -483,8 +483,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1023,6 +1023,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3357606287208313595, guid: 163032536b42746398cefd37d83fd468, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591319243758163264, guid: 163032536b42746398cefd37d83fd468, type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3943537641472512287, guid: 163032536b42746398cefd37d83fd468, type: 3}
@@ -1737,7 +1741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255521867}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.61541224, y: -0.000000030514858, z: 0.00000002382528, w: 0.78820544}
+  m_LocalRotation: {x: 0.61541224, y: 0.000000030514858, z: -0.00000002382528, w: 0.78820544}
   m_LocalPosition: {x: 0, y: 12, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2349,7 +2353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460052807}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.61541224, y: -0.000000030514858, z: 0.00000002382528, w: 0.78820544}
+  m_LocalRotation: {x: 0.61541224, y: 0.000000030514858, z: -0.00000002382528, w: 0.78820544}
   m_LocalPosition: {x: 0, y: 12, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
