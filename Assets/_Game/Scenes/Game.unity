@@ -1717,7 +1717,7 @@ Camera:
   far clip plane: 1000
   field of view: 73.81587
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 7.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2383,7 +2383,7 @@ MonoBehaviour:
   m_Follow: {fileID: 124562484}
   m_Lens:
     FieldOfView: 73.81587
-    OrthographicSize: 6
+    OrthographicSize: 7.9
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2874,7 +2874,7 @@ MonoBehaviour:
   m_levelSaveKey: Level
   m_totalLevelClearedSaveKey: LevelCleared
   m_levelSetList:
-  - {fileID: 2900931145657404908, guid: 040dfd07854b14301aa554712c044c86, type: 3}
+  - {fileID: 3933226651528462746, guid: 10124e0c1e23740098ca7660447e9c83, type: 3}
   - {fileID: 2900931145657404908, guid: 040dfd07854b14301aa554712c044c86, type: 3}
   m_levelParent: {fileID: 1760034308}
 --- !u!1660057539 &9223372036854775807

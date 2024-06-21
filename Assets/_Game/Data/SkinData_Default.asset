@@ -16,32 +16,36 @@ MonoBehaviour:
   - tileType: 1
     tilePower: 0
     text: 
-    material: {fileID: 2100000, guid: 3b62c615fd65b42718c34bdc83bd5fb1, type: 2}
+    material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
   - tileType: 2
     tilePower: 0
     text: 
     material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
   - tileType: 0
-    tilePower: 0
+    tilePower: 1
     text: 1
     material: {fileID: 2100000, guid: 59df9bcc718d24f37ae971f20b7013bd, type: 2}
   - tileType: 0
-    tilePower: 1
+    tilePower: 2
     text: 2
     material: {fileID: 2100000, guid: 8609608e5c51d4fa68f8814f9c337df2, type: 2}
   - tileType: 0
-    tilePower: 2
+    tilePower: 3
     text: 3
     material: {fileID: 2100000, guid: 967ccab4e00d942bc9f46cf075380de0, type: 2}
   - tileType: 0
-    tilePower: 3
+    tilePower: 4
     text: 4
     material: {fileID: 2100000, guid: 4ac0509612cd44abd9df94a686740d31, type: 2}
   - tileType: 0
-    tilePower: 4
+    tilePower: 5
     text: 5
     material: {fileID: 2100000, guid: d5ee72093d92740d8a9e5d4df5f4e492, type: 2}
   - tileType: 0
-    tilePower: 5
+    tilePower: 6
     text: 6
     material: {fileID: 2100000, guid: ef44b44e92d0f402e9966f3cf6ba5f41, type: 2}
+  - tileType: 0
+    tilePower: 7
+    text: 7
+    material: {fileID: 2100000, guid: 3934b908ece6c4d5b8228b9e5b51a140, type: 2}
