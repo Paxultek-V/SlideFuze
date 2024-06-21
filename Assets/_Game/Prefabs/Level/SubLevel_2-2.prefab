@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 144462009554087099, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
       propertyPath: m_Name
-      value: SubLevel_Base Variant
+      value: SubLevel_2-2
       objectReference: {fileID: 0}
+    - target: {fileID: 2729805618362212093, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
+      propertyPath: m_subLevelTileSkinData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e91298fdd9db4d9ca11992dae373685, type: 2}
     - target: {fileID: 3323467042049447050, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

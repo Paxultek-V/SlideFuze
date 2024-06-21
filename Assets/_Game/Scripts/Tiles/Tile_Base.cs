@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum TileType
@@ -28,14 +27,4 @@ public class Tile_Base : MonoBehaviour
         return transform.position;
     }
 
-    private void Start()
-    {
-        Initialize();
-    }
-
-    public virtual void Initialize()
-    {
-        GetComponent<Tile_Skin>().Initialize();
-    }
-    
 }

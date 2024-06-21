@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_powerTarget
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2729805618362212093, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
+      propertyPath: m_subLevelTileSkinData
+      value: 
+      objectReference: {fileID: 11400000, guid: 73aeb6f6693c44cec80bc7dfdb13f9fd, type: 2}
     - target: {fileID: 3219531731700113669, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1

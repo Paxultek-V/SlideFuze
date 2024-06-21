@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 144462009554087099, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
       propertyPath: m_Name
-      value: SubLevel_Base Variant
+      value: SubLevel_2-1
       objectReference: {fileID: 0}
     - target: {fileID: 2548108015218173827, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_camOrthoSize
       value: 9.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2729805618362212093, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
+      propertyPath: m_subLevelTileSkinData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f5b30d12203348c6a369c80c5dda2dd, type: 2}
     - target: {fileID: 3219531731700113669, guid: d259ac83072cd4ce3aa032e177f0fd5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
