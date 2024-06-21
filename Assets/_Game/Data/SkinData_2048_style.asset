@@ -16,7 +16,7 @@ MonoBehaviour:
   - tileType: 1
     tilePower: 0
     text: 
-    material: {fileID: 2100000, guid: 3b62c615fd65b42718c34bdc83bd5fb1, type: 2}
+    material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
   - tileType: 2
     tilePower: 0
     text: 
@@ -56,12 +56,12 @@ MonoBehaviour:
   - tileType: 0
     tilePower: 8
     text: 512
-    material: {fileID: 2100000, guid: 24c68953860284ab49a073dc62f2fd6a, type: 2}
+    material: {fileID: 2100000, guid: 4ac0509612cd44abd9df94a686740d31, type: 2}
   - tileType: 0
     tilePower: 9
     text: 1024
-    material: {fileID: 2100000, guid: 24c68953860284ab49a073dc62f2fd6a, type: 2}
+    material: {fileID: 2100000, guid: 967ccab4e00d942bc9f46cf075380de0, type: 2}
   - tileType: 0
     tilePower: 10
     text: 2048
-    material: {fileID: 2100000, guid: 24c68953860284ab49a073dc62f2fd6a, type: 2}
+    material: {fileID: 2100000, guid: ef44b44e92d0f402e9966f3cf6ba5f41, type: 2}

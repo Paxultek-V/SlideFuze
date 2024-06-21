@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &649296843189869300
+--- !u!1001 &6984535877574091199
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1045004436401829076, guid: ae51bb5e564444380aeba44ab4c3835b, type: 3}
       propertyPath: m_Name
-      value: Level_Base Variant
+      value: LVL4
       objectReference: {fileID: 0}
     - target: {fileID: 2094958209190929749, guid: ae51bb5e564444380aeba44ab4c3835b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,11 +55,11 @@ PrefabInstance:
     - target: {fileID: 5501150278826805443, guid: ae51bb5e564444380aeba44ab4c3835b, type: 3}
       propertyPath: m_subLevelList.Array.data[0]
       value: 
-      objectReference: {fileID: 2329959011628357615, guid: 605f0110a8dfa4f0ba98310ce358f487, type: 3}
+      objectReference: {fileID: 9113725351630656130, guid: a87027e32eb5a4152b0346af1d3699d7, type: 3}
     - target: {fileID: 5501150278826805443, guid: ae51bb5e564444380aeba44ab4c3835b, type: 3}
       propertyPath: m_subLevelList.Array.data[1]
       value: 
-      objectReference: {fileID: 6445147119498173835, guid: 96661bd250e4e484baedbce3aed29ab0, type: 3}
+      objectReference: {fileID: 4299659591570462829, guid: 0a2862f05c70d4431a6bda1573de652a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

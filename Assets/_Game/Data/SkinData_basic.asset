@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a8c3a1a6ddfd4899977c4a11f8c7194, type: 3}
-  m_Name: SkinData_Default
+  m_Name: SkinData_basic
   m_EditorClassIdentifier: 
   m_skinSetList:
   - tileType: 1
     tilePower: 0
     text: 
-    material: {fileID: 2100000, guid: 3b62c615fd65b42718c34bdc83bd5fb1, type: 2}
+    material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
   - tileType: 2
     tilePower: 0
     text: 

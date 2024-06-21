@@ -16,7 +16,7 @@ MonoBehaviour:
   - tileType: 1
     tilePower: 0
     text: 
-    material: {fileID: 2100000, guid: 3b62c615fd65b42718c34bdc83bd5fb1, type: 2}
+    material: {fileID: 2100000, guid: 9416a0297542b4440b0c255e14846b67, type: 2}
   - tileType: 2
     tilePower: 0
     text: 
